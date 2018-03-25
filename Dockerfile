@@ -1,8 +1,4 @@
-FROM java:8
-
-# Just used in testing (Heroku doesn't support this command)
-EXPOSE 8080
-
+FROM rubpana/spring-boot-app:dev
+# VOLUME IS NOT SUPPORTED BY HEROKU
 COPY target/*.jar /app.jar
-
-CMD ["java", "-jar", "/app.jar"]
+CMD java -jar /app.jar

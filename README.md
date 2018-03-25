@@ -29,11 +29,19 @@ $ mvn clean install
 $ heroku container:push web --app spring-web-dev-docker
 ```
 
+Although the tomcat server will be running at port XXXX, Heroku exposes your MVC application at:
+```
+https://spring-web-dev-docker.herokuapp.com/
+```
+So, you must invoke: https://spring-web-dev-docker.herokuapp.com/test to test the API exposed for this project.
+
 ## Running locally
 ```sh
-heroku local
+docker build -t spring-app .
+docker container run -d -p 8080:8080 --name app spring-app
 ```
-It will serve your application at port 8080 (Dockerfile says that).
+It will serve your application at port 8080.
+To test the application `http://localhost:8080/test`.
 
 ## Making changes on the project and deploying them to Heroku
 ```sh

@@ -35,6 +35,10 @@ https://spring-web-dev-docker.herokuapp.com/
 ```
 So, you must invoke: https://spring-web-dev-docker.herokuapp.com/test to test the API exposed for this project.
 
+## Heroku logs
+```sh
+$ heroku logs -t --app spring-web-dev-docker
+```
 ## Running locally
 ```sh
 docker build -t spring-app .
